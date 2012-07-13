@@ -1,0 +1,6 @@
+django_qspickle
+
+- Pickles Django Querysets, not their result
+
+picklestr = qspickle.pickle_qs(Model.objects.all())
+print qspickle.unpickle_qs(picklestr)
