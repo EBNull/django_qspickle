@@ -2,5 +2,8 @@ django_qspickle
 
 - Pickles Django Querysets, not their result
 
-picklestr = qspickle.pickle_qs(Model.objects.all())
-print qspickle.unpickle_qs(picklestr)
+    picklestr = qspickle.pickle_qs(Model.objects.all())
+    print qspickle.unpickle_qs(picklestr)
+    
+    
+pyPi: http://pypi.python.org/pypi?:action=display&name=django_qspickle

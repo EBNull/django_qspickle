@@ -8,7 +8,7 @@ setup(
     author_email='CBWhiz@gmail.com',
     description='Django queryset query pickling',
     long_description='Allows you to pickle a QuerySet (the query), not the results of executing the query.',
-    keywords = "django queryset",
+    keywords = "django queryset pickle",
     url = "https://github.com/CBWhiz/django_qspickle",
     license = "GNU General Public License (GPL)",
     classifiers=[
