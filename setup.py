@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
     name = "django_qspickle",
     version = "0.1",
-    packages = ['django_qspickle', ],
+    packages = ['qspickle', ],
     author='CBWhiz',
     author_email='CBWhiz@gmail.com',
     description='Django queryset query pickling',
