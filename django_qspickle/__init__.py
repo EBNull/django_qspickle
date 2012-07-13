@@ -8,7 +8,7 @@ try:
 except ImportError:
     from StringIO import StringIO
 
-__all__ = ('pickle_qs', 'unpickle_qs')
+__all__ = ('pickle_qs', 'unpickle_qs', 'roundtrip')
 
 
 class _DjangoQueryPickler(Pickler):
@@ -52,7 +52,7 @@ class _DjangoQueryUnpickler(Unpickler):
         if "%s.%s"%(module, name) in _DjangoQueryUnpickler.white_objects:
             ok = True
         if not ok:
-            print UnpicklingError("Unsafe class to unpickle %s.%s"%(module, name))
+            raise UnpicklingError("Unsafe class to unpickle %s.%s"%(module, name))
         return Unpickler.find_class(self, module, name)
 
 def pickle_qs(qs):
@@ -68,3 +68,6 @@ def unpickle_qs(str):
     #query.model = get_model(query.model[0], query.model[1])
     qs = klass(model=query.model,query=query)
     return qs
+    
+def roundtrip(qs):
+    return unpickle_qs(pickle_qs(qs))
